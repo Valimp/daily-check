@@ -1,3 +1,4 @@
+'use client'
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import {
@@ -69,9 +70,9 @@ export function SignupForm({
     <div className={cn("flex flex-col gap-6", className)} {...props}>
       <Card>
         <CardHeader className="text-center">
-          <CardTitle className="text-xl">Create your account</CardTitle>
+          <CardTitle className="text-xl">Créer votre compte</CardTitle>
           <CardDescription>
-            Enter your email below to create your account
+            Entrez votre email ci-dessous pour créer votre compte
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -83,9 +84,23 @@ export function SignupForm({
                   name="name"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Name</FormLabel>
+                      <FormLabel>Nom</FormLabel>
                       <FormControl>
                         <Input placeholder="John Doe" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+
+                <FormField
+                  control={form.control}
+                  name="email"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Email</FormLabel>
+                      <FormControl>
+                        <Input placeholder="john.doe@example.com" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -99,7 +114,7 @@ export function SignupForm({
                       name="password"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Password</FormLabel>
+                          <FormLabel>Mot de passe</FormLabel>
                           <FormControl>
                             <Input placeholder="********" {...field} type="password" />
                           </FormControl>
@@ -112,7 +127,7 @@ export function SignupForm({
                       name="confirmPassword"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Confirm Password</FormLabel>
+                          <FormLabel>Confirmez le mot de passe</FormLabel>
                           <FormControl>
                             <Input placeholder="********" {...field} type="password" />
                           </FormControl>
@@ -122,13 +137,13 @@ export function SignupForm({
                     />
                   </Field>
                   <FieldDescription>
-                    Must be at least 8 characters long.
+                    Votre mot de passe doit contenir au moins 8 caractères.
                   </FieldDescription>
                 </Field>
                 <Field>
-                  <Button type="submit">Create Account</Button>
+                  <Button type="submit">Créer un compte</Button>
                   <FieldDescription className="text-center">
-                    Already have an account? <a href="#">Sign in</a>
+                    Vous avez déjà un compte? <a href="#">Connectez-vous</a>
                   </FieldDescription>
                 </Field>
               </FieldGroup>
@@ -137,8 +152,8 @@ export function SignupForm({
         </CardContent>
       </Card>
       <FieldDescription className="px-6 text-center">
-        By clicking continue, you agree to our <a href="#">Terms of Service</a>{" "}
-        and <a href="#">Privacy Policy</a>.
+        En cliquant sur continuer, vous acceptez nos <a href="#">Conditions d'utilisation</a>{" "}
+        et notre <a href="#">Politique de confidentialité</a>.
       </FieldDescription>
     </div>
   )

@@ -65,9 +65,9 @@ export function LoginForm({
     <div className={cn("flex flex-col gap-6", className)} {...props}>
       <Card>
         <CardHeader className="text-center">
-          <CardTitle className="text-xl">Welcome back</CardTitle>
+          <CardTitle className="text-xl">Content de te revoir</CardTitle>
           <CardDescription>
-            Login with your Apple or Google account
+            Connectez-vous avec votre compte Apple ou Google.
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -82,7 +82,7 @@ export function LoginForm({
                         fill="currentColor"
                       />
                     </svg>
-                    Login with Apple
+                    Connectez-vous avec Apple
                   </Button>
                   <Button variant="outline" type="button" disabled>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -91,11 +91,11 @@ export function LoginForm({
                         fill="currentColor"
                       />
                     </svg>
-                    Login with Google
+                    Connectez-vous avec Google
                   </Button>
                 </Field>
                 <FieldSeparator className="*:data-[slot=field-separator-content]:bg-card">
-                  Or continue with
+                  Ou continuez avec
                 </FieldSeparator>
                 <FormField
                   control={form.control}
@@ -115,7 +115,7 @@ export function LoginForm({
                   name="password"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Password</FormLabel>
+                      <FormLabel>Mot de passe</FormLabel>
                       <FormControl>
                         <Input
                           placeholder="********"
@@ -131,12 +131,12 @@ export function LoginForm({
                   href="#"
                   className="ml-auto text-sm underline-offset-4 hover:underline"
                 >
-                  Forgot password?
+                  Mot de passe oublié?
                 </a>
                 <Field>
-                  <Button type="submit">Sign In</Button>
+                  <Button type="submit">Se connecter</Button>
                   <FieldDescription className="text-center">
-                    Don&apos;t have an account? <a href="#">Sign up</a>
+                    Vous n'avez pas de compte? <a href="#">Inscrivez-vous</a>
                   </FieldDescription>
                 </Field>
               </FieldGroup>
@@ -145,8 +145,8 @@ export function LoginForm({
         </CardContent>
       </Card>
       <FieldDescription className="px-6 text-center">
-        By clicking continue, you agree to our <a href="#">Terms of Service</a>{" "}
-        and <a href="#">Privacy Policy</a>.
+        En cliquant sur continuer, vous acceptez nos <a href="#">Conditions d'utilisation</a>{" "}
+        et notre <a href="#">Politique de confidentialité</a>.
       </FieldDescription>
     </div>
   )
