@@ -7,13 +7,22 @@ on:
       - master
       - main
 
+
 jobs:
   check-branch-name:
     runs-on: ubuntu-latest
     steps:
       - name: Vérifier le nom de la branche
+        shell: bash
         run: |
-          BRANCH_NAME=${GITHUB_HEAD_REF:-${GITHUB_REF##*/}}
+          if [ -n "$GITHUB_HEAD_REF" ]; then
+            BRANCH_NAME="$GITHUB_HEAD_REF"
+          else
+            BRANCH_NAME="${GITHUB_REF#refs/heads/}"
+          fi
+
+          echo "Nom de branche: $BRANCH_NAME"
+
           if [[ ! "$BRANCH_NAME" =~ ^(feature|bug|doc|db|ui|config)/ ]]; then
             echo "Nom de branche invalide. Le nom doit commencer par feature/, bug/, doc/, db/, ui/ ou config/"
             exit 1
