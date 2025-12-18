@@ -147,6 +147,8 @@ model Task {
   @@index([parentTaskId])
 }
 
+// TaskOccurrence model represents each occurrence of a recurring task
+// It helps in tracking individual instances of a recurring task
 model TaskOccurrence {
   id            String      @id @default(cuid())
   taskId        String
@@ -166,6 +168,8 @@ model TaskOccurrence {
   @@index([scheduledDate])
 }
 
+// TaskCompletion model records the completion of a task occurrence
+// It includes the workload done and the completion timestamp
 model TaskCompletion {
   id                String          @id @default(cuid())
   taskOccurrenceId  String

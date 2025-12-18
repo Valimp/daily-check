@@ -1,3 +1,7 @@
+import { Typography, TypographyType } from '@/components/ui/typography';
+
 export default function DashboardPage() {
-    return <h1>Welcome to the Dashboard</h1>;
+    return (
+        <Typography type={TypographyType.H1}>Plan du jour</Typography>
+    )
 }
