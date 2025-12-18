@@ -10,7 +10,7 @@ jobs:
       - name: Vérifier le titre de la PR
         run: |
           PR_TITLE="${{ github.event.pull_request.title }}"
-          if [[ ! "$PR_TITLE" =~ ^(feature|bug|doc|db|ui): ]]; then
-            echo "Titre de PR invalide. Il doit commencer par feature:, bug:, doc:, db: ou ui:"
+          if [[ ! "$PR_TITLE" =~ ^(feature|bug|doc|db|ui|config): ]]; then
+            echo "Titre de PR invalide. Il doit commencer par feature:, bug:, doc:, db:, ui: ou config:"
             exit 1
           fi

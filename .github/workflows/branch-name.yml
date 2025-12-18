@@ -14,7 +14,7 @@ jobs:
       - name: Vérifier le nom de la branche
         run: |
           BRANCH_NAME=${GITHUB_HEAD_REF:-${GITHUB_REF##*/}}
-          if [[ ! "$BRANCH_NAME" =~ ^(feature|bug|doc|db|ui)/ ]]; then
-            echo "Nom de branche invalide. Le nom doit commencer par feature/, bug/, doc/, db/ ou ui/"
+          if [[ ! "$BRANCH_NAME" =~ ^(feature|bug|doc|db|ui|config)/ ]]; then
+            echo "Nom de branche invalide. Le nom doit commencer par feature/, bug/, doc/, db/, ui/ ou config/"
             exit 1
           fi
