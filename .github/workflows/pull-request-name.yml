@@ -1,0 +1,16 @@
+name: Vérifier le titre des PR
+on:
+  pull_request:
+    types: [opened, edited, synchronize]
+
+jobs:
+  check-pr-title:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Vérifier le titre de la PR
+        run: |
+          PR_TITLE="${{ github.event.pull_request.title }}"
+          if [[ ! "$PR_TITLE" =~ ^(feature|bug|doc|db|ui|config): ]]; then
+            echo "Titre de PR invalide. Il doit commencer par feature:, bug:, doc:, db:, ui: ou config:"
+            exit 1
+          fi
