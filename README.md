@@ -1,41 +1,117 @@
-## Daily-check
+# DailyCheck
 
-### Objectives
+## Overview
 
-The main idea with this project is to manage your daily tasks and avoid delays and cumulative tasks.
+**DailyCheck** is a web application designed to help manage and organize daily household tasks.
+It provides a simple and efficient way to keep track of chores, responsibilities, and routines, making everyday life easier and more structured.
 
-- CONFIGURE your own place, and add some daily or weekly tasks to do.
-- MONITOR the process of tasks and target bottlenecks processes
+---
 
-## Getting Started
+## Technical Overview
 
-First, install dependencies :
+The project is built with a modern and robust tech stack:
+
+- **Next.js** – Frontend framework for building fast, scalable React applications
+- **Prisma** – ORM for type-safe database access
+- **Neon** – Serverless PostgreSQL database
+- **shadcn/ui** – Reusable and accessible UI components
+
+---
+
+## How to Install Locally
+
+### Prerequisites
+
+- Node.js (v18 or later recommended)
+- npm
+- A PostgreSQL database (Neon recommended)
+
+### Installation Steps
+
+1. **Clone the repository**
+
+   ```bash
+   git clone <repository-url>
+   cd dailycheck
+   ```
+
+2. **Install dependencies**
+
+   ```bash
+   npm install
+   ```
+
+3. **Generate Prisma Client**
+
+   ```bash
+   npx prisma generate
+   ```
+
+4. **Start the development server**
+
+   ```bash
+   npm run dev
+   ```
+
+5. Open your browser at:
+
+   ```
+   http://localhost:3000
+   ```
+
+---
+
+## How to Contribute
+
+Contributions are welcome! Please follow the rules below to ensure consistency and code quality.
+
+### Branch Naming Convention
+
+All branches must start with one of the following prefixes:
+
+- `feature/`
+- `bug/`
+- `doc/`
+- `db/`
+- `ui/`
+- `config/`
+
+Example:
 
 ```bash
-npm i
+feature/add-task-reminders
 ```
 
-Then, run the development server:
+Pull requests or pushes that do not follow this convention will fail the CI checks.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+### Pull Request Title Convention
+
+Pull request titles must start with one of the following prefixes:
+
+- `feature:`
+- `bug:`
+- `doc:`
+- `db:`
+- `ui:`
+- `config:`
+
+Example:
+
+```
+feature: add recurring household tasks
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+PRs with invalid titles will be automatically rejected by the CI workflow.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+### Contribution Flow
 
-To learn more about Next.js, take a look at the following resources:
+1. Create a new branch following the naming rules
+2. Make your changes
+3. Open a pull request with a valid title
+4. Ensure all checks pass before requesting a review
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Thank you for contributing to **DailyCheck** 🚀
