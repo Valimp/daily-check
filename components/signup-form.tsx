@@ -152,7 +152,7 @@ export function SignupForm({
         </CardContent>
       </Card>
       <FieldDescription className="px-6 text-center">
-        En cliquant sur continuer, vous acceptez nos <a href="#">Conditions d'utilisation</a>{" "}
+        En cliquant sur continuer, vous acceptez nos <a href="#">Conditions d&apos;utilisation</a>{" "}
         et notre <a href="#">Politique de confidentialité</a>.
       </FieldDescription>
     </div>
