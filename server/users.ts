@@ -1,6 +1,7 @@
 "use server";
 
 import { auth } from "@/lib/auth";
+import { headers } from "next/headers";
 
 export const signIn = async (email: string, password: string) => {
   try {
@@ -46,3 +47,13 @@ export const signUp = async (name: string, email: string, password: string) => {
     };
   }
 };
+
+export async function getCurrentUser() {
+  const requestedHeader = await headers();
+
+  const session = await auth.api.getSession({
+    headers: requestedHeader,
+  });
+
+  return session?.user ?? null;
+}

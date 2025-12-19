@@ -136,7 +136,7 @@ export function LoginForm({
                 <Field>
                   <Button type="submit">Se connecter</Button>
                   <FieldDescription className="text-center">
-                    Vous n'avez pas de compte? <a href="#">Inscrivez-vous</a>
+                    Vous n&apos;avez pas de compte? <a href="#">Inscrivez-vous</a>
                   </FieldDescription>
                 </Field>
               </FieldGroup>
@@ -145,7 +145,7 @@ export function LoginForm({
         </CardContent>
       </Card>
       <FieldDescription className="px-6 text-center">
-        En cliquant sur continuer, vous acceptez nos <a href="#">Conditions d'utilisation</a>{" "}
+        En cliquant sur continuer, vous acceptez nos <a href="#">Conditions d&apos;utilisation</a>{" "}
         et notre <a href="#">Politique de confidentialité</a>.
       </FieldDescription>
     </div>
