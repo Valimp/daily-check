@@ -1,5 +1,4 @@
 import { Badge } from "@/components/ui/badge";
-import { Typography, TypographyType } from "@/components/ui/typography";
 import { formatDate } from "@/lib/utils";
 import { ApartmentRole } from "../generated/prisma/browser";
 import {
