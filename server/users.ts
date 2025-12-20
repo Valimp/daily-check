@@ -48,7 +48,7 @@ export const signUp = async (name: string, email: string, password: string) => {
   }
 };
 
-export async function getCurrentUser() {
+export const getCurrentUser = async () => {
   const requestedHeader = await headers();
 
   const session = await auth.api.getSession({
@@ -56,4 +56,4 @@ export async function getCurrentUser() {
   });
 
   return session?.user ?? null;
-}
+};
