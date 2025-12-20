@@ -6,15 +6,22 @@ import { Separator } from '@/components/ui/separator';
 import { Button } from '@/components/ui/button';
 import { HousePlus, PencilLine, Trash2 } from 'lucide-react';
 import { formatDate } from '@/lib/utils';
+import Link from 'next/link';
+import ApartmentTable from '@/app/profile/apartment-table';
 
 export default async function ProfilePage() {
 
     const currentUser = await getCurrentUser();
-    const userApartments = await getUserApartments();
+    const userApartmentsInfos = await getUserApartments();
 
     if (!currentUser) {
         return (
             <Typography type={TypographyType.P}>Utilisateur non authentifié.</Typography>
+        )
+    }
+    if (!userApartmentsInfos.success) {
+        return (
+            <Typography type={TypographyType.P}>Erreur lors de la récupération des appartements : {userApartmentsInfos.error}</Typography>
         )
     }
 
@@ -93,22 +100,18 @@ export default async function ProfilePage() {
                 <div className='w-full border-[1] p-6 rounded-lg relative'>
                     <Typography type={TypographyType.H4}>Vos appartements</Typography>
                     {/* Apartment list or message if none */}
-                    {userApartments.length > 0 ? (
-                        <ul>
-                            {userApartments.map((apartmentMember) => (
-                                <li key={apartmentMember.id}>
-                                    {apartmentMember.apartmentId} - Role: {apartmentMember.role}
-                                </li>
-                            ))}
-                        </ul>
+                    {userApartmentsInfos.apartments?.length !== undefined ? (
+                        <ApartmentTable userApartments={userApartmentsInfos.apartments} />
                     ) : (
                         <Typography type={TypographyType.P}>Vous n&apos;avez pas encore d&apos;appartements.</Typography>
                     )}
                     <div className='absolute top-1 right-1'>
-                        <Button variant='default'>
-                            <HousePlus />
-                            Créer un appartement
-                        </Button>
+                        <Link href="/profile/apartment">
+                            <Button variant='default'>
+                                <HousePlus />
+                                Créer un appartement
+                            </Button>
+                        </Link>
                     </div>
                 </div>
 
